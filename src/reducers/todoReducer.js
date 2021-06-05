@@ -5,16 +5,16 @@ const initialState = {
   todoDetails: [],
 };
 
-const todoReducer = async (state = initialState, action) => {
+function todoReducer(state = initialState, action) {
   switch (action.type) {
     case Actions.SAVE_TODO_DETAILS:
       return {
         ...state,
-        todoDetails: action.payload,
+        todoDetails: [].concat(...state.todoDetails, action.payload),
       };
     default:
       return state;
   }
-};
+}
 
 export default todoReducer;
