@@ -1,6 +1,7 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
-import Home from '../views/Home/Home';
+import Add from '../views/Add';
+import Home from '../views/Home';
 
 const Stack = createStackNavigator();
 
@@ -9,9 +10,20 @@ const PrimaryContainer = props => {
     <Stack.Navigator>
       <Stack.Screen
         options={{headerShown: false}}
-        key={`home_screen`}
-        name={`home_screen`}
+        key={`home`}
+        name={`home`}
         component={Home}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
+        key={`add`}
+        name={`add`}
+        component={Add}
+        options={{
+          title: 'Add',
+          headerShown: true,
+          headerBackTitle: 'back',
+        }}
       />
     </Stack.Navigator>
   );
