@@ -1,10 +1,26 @@
 // redux specific imports
-import {applyMiddleware, createStore, compose} from 'redux';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {applyMiddleware, createStore} from 'redux';
+import {persistReducer, persistStore} from 'redux-persist';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/rootReducer';
 
-let middleware = applyMiddleware(thunk);
+// Middleware : Redux Persist Config
+const persistConfig = {
+  key: 'root',
+  storage: AsyncStorage,
+  //Save specific Reducers
+  whitelist: ['todo'],
+  // Don't save specific Reducers
+  blacklist: [],
+};
 
-const store = createStore(rootReducer, compose(middleware));
+// Middleware: Redux Persist Persisted Reducer
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-export default store;
+const store = createStore(persistedReducer, applyMiddleware(thunk));
+
+// Middleware: Redux Persist Persister
+let persistor = persistStore(store);
+
+export {store, persistor};

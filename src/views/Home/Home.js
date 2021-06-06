@@ -7,6 +7,7 @@ import {
   View,
 } from 'react-native';
 import {connect} from 'react-redux';
+import TodoList from '../../components/TodoList/TodoList';
 import {styles} from './Home.style';
 class Home extends Component {
   // navigate to add screen
@@ -15,11 +16,11 @@ class Home extends Component {
   };
 
   render() {
-    console.log('state -- >', this.props.todo);
     return (
       <SafeAreaView style={{flex: 1}}>
         <StatusBar translucent barStyle="light-content" />
         <View style={styles.container}>
+          <TodoList todoList={this.props.todo} />
           <TouchableOpacity style={styles.button} onPress={this.goToAddScreen}>
             <Text style={styles.text}>{'ADD'}</Text>
           </TouchableOpacity>
