@@ -1,18 +1,20 @@
 import {StyleSheet} from 'react-native';
+import {ColourPalette} from '../../assets/styles/ColoursStyles';
+import { FontFamily } from '../../assets/fonts/Fonts';
 
 export const styles = StyleSheet.create({
   container: {flex: 1, margin: 20},
   textContainer: {
     height: 50,
-    backgroundColor: '#fff',
+    backgroundColor: ColourPalette.white,
     flexDirection: 'row',
     alignItems: 'center',
-    borderColor: '#000',
+    borderColor: ColourPalette.black,
     shadowOffset: {
       width: 0,
       height: 0,
     },
-    shadowColor: '#000',
+    shadowColor: ColourPalette.black,
     shadowOpacity: 0.2,
     elevation: 1,
     borderRadius: 5,
@@ -22,17 +24,17 @@ export const styles = StyleSheet.create({
   titleText: {
     margin: 15,
     fontSize: 20,
-    fontFamily: 'Avenir-Medium',
-    color: '#000',
+    fontFamily: FontFamily.AVENIR_MEDIUM,
+    color: ColourPalette.black,
   },
   submitText: {
     margin: 10,
     fontSize: 20,
-    fontFamily: 'Avenir-Medium',
-    color: '#fff',
+    fontFamily: FontFamily.AVENIR_MEDIUM,
+    color: ColourPalette.white,
   },
   button: {
-    backgroundColor: 'pink',
+    backgroundColor: ColourPalette.primary,
     justifyContent: 'center',
     alignItems: 'center',
     height: 70,

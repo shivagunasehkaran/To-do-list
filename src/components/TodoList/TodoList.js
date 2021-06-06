@@ -1,9 +1,15 @@
+import CheckBox from '@react-native-community/checkbox';
 import React, {Component} from 'react';
 import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-
+import { FontFamily } from '../../assets/fonts/Fonts';
+import { ColourPalette } from '../../assets/styles/ColoursStyles';
 class TodoList extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isSelected: false,
+      setSelection: false,
+    };
   }
 
   renderRow = (item, index) => {
@@ -12,33 +18,30 @@ class TodoList extends Component {
     let description = data ? data.description : '';
     return (
       <View style={styles.itemContainer}>
-        <View style={{flex: 1}}>
-          <TouchableOpacity onPress={this.props.onPress}>
-            <View style={{flexDirection: 'row'}}>
-              <View style={{flex: 1}}>
-                <Text style={styles.title}>{title}</Text>
-              </View>
+        <CheckBox
+          value={this.state.isSelected}
+          onValueChange={this.state.setSelection}
+          style={styles.checkbox}
+        />
+        <TouchableOpacity
+          style={styles.textContainer}
+          onPress={this.props.onPress}>
+          <View style={{flexDirection: 'row'}}>
+            <View style={{flex: 1}}>
+              <Text style={styles.title} numberOfLines={1}>
+                {title}
+              </Text>
             </View>
-            <View style={{marginTop: 15, flexDirection: 'row'}}>
-              <View style={{flex: 1}}>
-                <Text style={styles.desc}>{description}</Text>
-              </View>
+          </View>
+          <View style={{marginTop: 15, flexDirection: 'row'}}>
+            <View style={{flex: 1}}>
+              <Text style={styles.desc} numberOfLines={1}>
+                {description}
+              </Text>
             </View>
-          </TouchableOpacity>
-        </View>
+          </View>
+        </TouchableOpacity>
       </View>
-    );
-  };
-
-  FlatListItemSeparator = () => {
-    return (
-      <View
-        style={{
-          height: 0.5,
-          width: '100%',
-          backgroundColor: '#0C0D0F',
-        }}
-      />
     );
   };
 
@@ -47,8 +50,8 @@ class TodoList extends Component {
     return (
       <View style={styles.container}>
         <FlatList
+          contentContainerStyle={{paddingBottom: 50}}
           data={todoList}
-          ItemSeparatorComponent={this.FlatListItemSeparator}
           renderItem={this.renderRow}
           keyExtractor={item => item.toString()}
         />
@@ -60,33 +63,44 @@ class TodoList extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginBottom: 20,
   },
   text: {
     fontSize: 30,
-    fontFamily: 'Avenir-Medium',
+    fontFamily: FontFamily.AVENIR_MEDIUM,
   },
   itemContainer: {
     flex: 1,
-    width: '90%',
-    height: 100,
-    shadowColor: '#000',
-    borderColor: '#000',
+    height: 90,
+    shadowColor: ColourPalette.black,
+    borderColor: ColourPalette.black,
     shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.8,
     shadowRadius: 2,
     elevation: 3,
-    margin: 15,
-    padding: 10,
-    backgroundColor: '#fff',
+    marginVertical: 10,
+    padding: 15,
+    marginHorizontal: 10,
+    backgroundColor: ColourPalette.white,
+    borderRadius: 15,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  checkbox: {
+    paddingLeft: 10,
+  },
+  textContainer: {
+    flex: 1,
+    marginLeft: 20,
   },
   title: {
     fontSize: 23,
     fontWeight: 'bold',
-    fontFamily: 'Avenir-Medium',
+    fontFamily: FontFamily.AVENIR_MEDIUM,
   },
   desc: {
-    fontSize: 20,
-    fontFamily: 'Avenir-Medium',
+    fontSize: 15,
+    fontFamily: FontFamily.AVENIR_MEDIUM,
   },
 });
 

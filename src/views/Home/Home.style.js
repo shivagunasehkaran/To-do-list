@@ -1,11 +1,13 @@
 import {StyleSheet} from 'react-native';
+import {ColourPalette} from '../../assets/styles/ColoursStyles';
+import { FontFamily } from '../../assets/fonts/Fonts';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
   button: {
-    backgroundColor: 'pink',
+    backgroundColor: ColourPalette.primary,
     justifyContent: 'center',
     alignItems: 'center',
     height: 70,
@@ -15,7 +17,7 @@ export const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
-    fontFamily: 'Avenir-Medium',
-    color: '#fff',
+    fontFamily: FontFamily.AVENIR_MEDIUM,
+    color: ColourPalette.white,
   },
 });
