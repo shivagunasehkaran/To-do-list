@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import {
   Alert,
+  KeyboardAvoidingView,
+  Platform,
   SafeAreaView,
   Text,
   TextInput,
   TouchableOpacity,
   View,
+  ScrollView,
 } from 'react-native';
 import {connect} from 'react-redux';
 import {saveTodoDetails} from '../../actions/todoAction';
@@ -13,7 +16,6 @@ import {styles} from './Add.style';
 class Add extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       title: '',
       description: '',
@@ -68,32 +70,40 @@ class Add extends Component {
   render() {
     return (
       <SafeAreaView style={{flex: 1}}>
-        <View style={{flex: 1}}>
-          <View style={styles.container}>
-            <Text style={styles.titleText}>{'Title'}</Text>
-            <TextInput
-              style={styles.textContainer}
-              placeholder="Enter Title"
-              onChangeText={title =>
-                this.setState({title, isTitleEmpty: false})
-              }
-            />
-            <Text style={styles.titleText}>{'Description'}</Text>
-            <TextInput
-              style={styles.textContainer}
-              placeholder="Enter Description"
-              onChangeText={description =>
-                this.setState({description, isDescriptionEmpty: false})
-              }
-            />
-          </View>
-          <TouchableOpacity
-            style={styles.button}
-            testID={'addAction'}
-            onPress={() => this.doAddAction()}>
-            <Text style={styles.submitText}>{'SAVE'}</Text>
-          </TouchableOpacity>
-        </View>
+        <KeyboardAvoidingView
+          style={{flex: 1}}
+          behavior={Platform.OS === 'ios' ? 'padding' : null}>
+          <ScrollView
+            style={{flex: 1, marginBottom: 80}}
+            keyboardShouldPersistTaps="handled">
+            <View style={styles.container}>
+              <Text style={styles.titleText}>{'Title'}</Text>
+              <TextInput
+                style={styles.textContainer}
+                placeholder="Enter Title"
+                returnKeyType="next"
+                onChangeText={title => {
+                  this.setState({title, isTitleEmpty: false});
+                }}
+              />
+              <Text style={styles.titleText}>{'Description'}</Text>
+              <TextInput
+                style={styles.textContainer}
+                placeholder="Enter Description"
+                returnKeyType="done"
+                onChangeText={description =>
+                  this.setState({description, isDescriptionEmpty: false})
+                }
+              />
+            </View>
+          </ScrollView>
+        </KeyboardAvoidingView>
+        <TouchableOpacity
+          style={styles.button}
+          testID={'addAction'}
+          onPress={() => this.doAddAction()}>
+          <Text style={styles.submitText}>{'SAVE'}</Text>
+        </TouchableOpacity>
       </SafeAreaView>
     );
   }
