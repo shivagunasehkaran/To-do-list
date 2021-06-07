@@ -1,8 +1,8 @@
 import CheckBox from '@react-native-community/checkbox';
 import React, {Component} from 'react';
 import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import { FontFamily } from '../../assets/fonts/Fonts';
-import { ColourPalette } from '../../assets/styles/ColoursStyles';
+import {FontFamily} from '../../assets/fonts/Fonts';
+import {ColourPalette} from '../../assets/styles/ColoursStyles';
 class TodoList extends Component {
   constructor(props) {
     super(props);
@@ -49,6 +49,11 @@ class TodoList extends Component {
     const {todoList} = this.props;
     return (
       <View style={styles.container}>
+        {todoList.length === 0 && (
+          <View style={styles.textView}>
+            <Text style={styles.text}>{'Add a `TODO` to get started !'}</Text>
+          </View>
+        )}
         <FlatList
           contentContainerStyle={{paddingBottom: 50}}
           data={todoList}
@@ -65,9 +70,15 @@ const styles = StyleSheet.create({
     flex: 1,
     marginBottom: 20,
   },
+  textView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   text: {
-    fontSize: 30,
+    fontSize: 20,
     fontFamily: FontFamily.AVENIR_MEDIUM,
+    color: ColourPalette.primary,
   },
   itemContainer: {
     flex: 1,

@@ -89,6 +89,7 @@ class Add extends Component {
           </View>
           <TouchableOpacity
             style={styles.button}
+            testID={'addAction'}
             onPress={() => this.doAddAction()}>
             <Text style={styles.submitText}>{'SAVE'}</Text>
           </TouchableOpacity>

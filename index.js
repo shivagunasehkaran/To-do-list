@@ -9,7 +9,7 @@ import {PersistGate} from 'redux-persist/integration/react';
 import {name as appName} from './app.json';
 import App from './src/App';
 import {ColourPalette} from './src/assets/styles/ColoursStyles';
-import {persistor, store} from './src/store';
+import {persistor, store} from './src/store/store';
 
 AppRegistry.registerComponent(appName, () => {
   return () => (
