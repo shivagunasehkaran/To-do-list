@@ -10,134 +10,154 @@ exports[`ConnectedAdd screen: Snapshot Testing renders correctly when success ca
   }
 >
   <View
+    onLayout={[Function]}
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "paddingBottom": 0,
+        },
+      ]
     }
   >
-    <View
+    <RCTScrollView
+      keyboardShouldPersistTaps="handled"
       style={
         Object {
           "flex": 1,
-          "margin": 20,
+          "marginBottom": 80,
         }
       }
     >
-      <Text
-        style={
-          Object {
-            "color": "#000000",
-            "fontFamily": "Avenir-Medium",
-            "fontSize": 20,
-            "margin": 15,
+      <View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "margin": 20,
+            }
           }
-        }
-      >
-        Title
-      </Text>
-      <TextInput
-        allowFontScaling={true}
-        onChangeText={[Function]}
-        placeholder="Enter Title"
-        rejectResponderTermination={true}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#FFFFFF",
-            "borderColor": "#000000",
-            "borderRadius": 5,
-            "elevation": 1,
-            "flexDirection": "row",
-            "fontSize": 20,
-            "height": 50,
-            "paddingLeft": 15,
-            "shadowColor": "#000000",
-            "shadowOffset": Object {
-              "height": 0,
-              "width": 0,
-            },
-            "shadowOpacity": 0.2,
-          }
-        }
-        underlineColorAndroid="transparent"
-      />
-      <Text
-        style={
-          Object {
-            "color": "#000000",
-            "fontFamily": "Avenir-Medium",
-            "fontSize": 20,
-            "margin": 15,
-          }
-        }
-      >
-        Description
-      </Text>
-      <TextInput
-        allowFontScaling={true}
-        onChangeText={[Function]}
-        placeholder="Enter Description"
-        rejectResponderTermination={true}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#FFFFFF",
-            "borderColor": "#000000",
-            "borderRadius": 5,
-            "elevation": 1,
-            "flexDirection": "row",
-            "fontSize": 20,
-            "height": 50,
-            "paddingLeft": 15,
-            "shadowColor": "#000000",
-            "shadowOffset": Object {
-              "height": 0,
-              "width": 0,
-            },
-            "shadowOpacity": 0.2,
-          }
-        }
-        underlineColorAndroid="transparent"
-      />
-    </View>
-    <View
-      accessible={true}
-      focusable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+        >
+          <Text
+            style={
+              Object {
+                "color": "#000000",
+                "fontFamily": "Avenir-Medium",
+                "fontSize": 20,
+                "margin": 15,
+              }
+            }
+          >
+            Title
+          </Text>
+          <TextInput
+            allowFontScaling={true}
+            onChangeText={[Function]}
+            placeholder="Enter Title"
+            rejectResponderTermination={true}
+            returnKeyType="next"
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#FFFFFF",
+                "borderColor": "#000000",
+                "borderRadius": 5,
+                "elevation": 1,
+                "flexDirection": "row",
+                "fontSize": 20,
+                "height": 50,
+                "paddingLeft": 15,
+                "shadowColor": "#000000",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.2,
+              }
+            }
+            underlineColorAndroid="transparent"
+          />
+          <Text
+            style={
+              Object {
+                "color": "#000000",
+                "fontFamily": "Avenir-Medium",
+                "fontSize": 20,
+                "margin": 15,
+              }
+            }
+          >
+            Description
+          </Text>
+          <TextInput
+            allowFontScaling={true}
+            onChangeText={[Function]}
+            placeholder="Enter Description"
+            rejectResponderTermination={true}
+            returnKeyType="done"
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#FFFFFF",
+                "borderColor": "#000000",
+                "borderRadius": 5,
+                "elevation": 1,
+                "flexDirection": "row",
+                "fontSize": 20,
+                "height": 50,
+                "paddingLeft": 15,
+                "shadowColor": "#000000",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.2,
+              }
+            }
+            underlineColorAndroid="transparent"
+          />
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#8F8FFF",
+        "bottom": 0,
+        "height": 70,
+        "justifyContent": "center",
+        "opacity": 1,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+    testID="addAction"
+  >
+    <Text
       style={
         Object {
-          "alignItems": "center",
-          "backgroundColor": "#8F8FFF",
-          "bottom": 0,
-          "height": 70,
-          "justifyContent": "center",
-          "opacity": 1,
-          "position": "absolute",
-          "width": "100%",
+          "color": "#FFFFFF",
+          "fontFamily": "Avenir-Medium",
+          "fontSize": 20,
+          "margin": 10,
         }
       }
-      testID="addAction"
     >
-      <Text
-        style={
-          Object {
-            "color": "#FFFFFF",
-            "fontFamily": "Avenir-Medium",
-            "fontSize": 20,
-            "margin": 10,
-          }
-        }
-      >
-        SAVE
-      </Text>
-    </View>
+      SAVE
+    </Text>
   </View>
 </RCTSafeAreaView>
 `;
