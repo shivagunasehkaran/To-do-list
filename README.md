@@ -55,3 +55,9 @@ Please go ahead and play around  :)
   - screen recording of simulator has attached
 
 ## cheers :)
+
+iOS screen shots (iPhone 11):
+
+![Simulator Screen Shot - iPhone 12 - 2021-06-07 at 16 06 51](https://user-images.githubusercontent.com/11419839/121139975-f9493800-c856-11eb-8196-d9c0df14bd61.png)
+![Simulator Screen Shot - iPhone 12 - 2021-06-07 at 16 08 54](https://user-images.githubusercontent.com/11419839/121140081-1251e900-c857-11eb-8a9e-12cdac455377.png)
+![Simulator Screen Shot - iPhone 12 - 2021-06-07 at 16 06 55](https://user-images.githubusercontent.com/11419839/121140121-1d0c7e00-c857-11eb-87ab-34bee4953274.png)
